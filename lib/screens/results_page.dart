@@ -4,13 +4,15 @@ import 'package:flutter/material.dart';
 import '../components/bottom_button.dart';
 import '../constants.dart';
 
-class Screen1 extends StatelessWidget {
-  // Map<String, int> datas = ['NORMAL', 10];
+class ResultsPage extends StatelessWidget {
+  ResultsPage(
+      {required this.bmiResults,
+      required this.bmiText,
+      required this.interpretation});
 
-  final String diagnose = 'NORMAL';
-  final double result = 0;
-  final String description =
-      "Good luck luck luck luck luck luck luck luck luck";
+  late final String bmiResults;
+  late final String bmiText;
+  late final String interpretation;
 
   @override
   Widget build(BuildContext context) {
@@ -40,9 +42,9 @@ class Screen1 extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text(diagnose, style: kResultTextStyle),
-                      Text(result.toString(), style: kBMITextStyle),
-                      Text(description,
+                      Text(bmiText, style: kResultTextStyle),
+                      Text(bmiResults.toString(), style: kBMITextStyle),
+                      Text(interpretation,
                           style: kResultDescriptionTextStyle,
                           textAlign: TextAlign.center),
                     ],
